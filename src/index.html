@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>404 movies</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">404 Movies</a>
+      <a href="watchlist.html" id="watchlistLink">My Watchlist</a>
+      <div class="form">
+        <div class="align">
+          <input id="moviename" class="input" placeholder="Enter your movie" required="" type="text" >
+          <span class="input-border"></span>
+        </div>
+        <button id="searchbut" onclick="search()">Search</button>      
+      </div>
+    </header>
+    <section class="banner" id="home">
+      <div id="box">
+        <div id="posters">
+        </div> 
+      </div>   
+    </section>
+    <div class="recommended-movies">
+      <h3>Recommended Movies</h3>
+      <div id="recommendedMovies" class="recommend"></div>
+    </div>  
+    <script src="renderer.js"></script>
+  </body>
+</html>

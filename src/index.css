@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+  background-color: rgb(21, 21, 136);
+}
+
+:root {
+    --lightb: rgba(75, 75, 247, 0.733);
+    --blue: #070433;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--blue);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: 0.5s;
+}
+
+header.sticky {
+    padding: 10px 100px;
+}
+
+#card{
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+p{
+  color: aliceblue;
+}
+
+h3{
+
+  color: antiquewhite;
+}
+
+h2{
+  color:antiquewhite;
+  text-align: center;
+}
+
+.logo
+{
+    position: relative;
+    display: inline-block;
+    color: var(--lightb);
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.banner
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 150px 10px 10px 10px;
+}
+  
+#posters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  width: calc(33.33% - 20px);
+  max-width: 300px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.movie:hover {
+  animation: glow 1s infinite;
+}
+
+.movie h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.movie p {
+  margin: 0;
+}
+
+.movie img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie:hover img {
+  transform: scale(1.1);
+}
+
+.movie-details {
+  flex-grow: 1;
+}
+
+.movie .description {
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+
+@media (max-width: 900px) {
+  .movie {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .movie {
+    width: 100%;
+  }
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.8), 0 0 40px rgba(0, 0, 255, 0.6), 0 0 80px rgba(0, 0, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+}
+.movie-details {
+  margin-left: 20px;
+}
+
+.movie-details h3 {
+  margin-top: 0;
+}
+
+.movie-details p {
+  margin: 5px 0;
+}
+
+.description {
+  font-weight: bold;
+}
+
+.form {
+  --width-of-input: 200px;
+  --border-height: 1px;
+  --border-before-color: rgba(221, 221, 221, 0.39);
+  --border-after-color: #5891ff;
+  --input-hovered-color: #4985e01f;
+  position: relative;
+  width: var(--width-of-input);
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Add gap between input and button */
+  margin-bottom: 20px;
+}
+ /* styling of Input */
+ .input {
+  color: #fff;
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 150%;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+  border-bottom: var(--border-height) solid var(--border-before-color);
+  flex: 1; /* Take remaining available space */
+  margin-right: 110px;
+ }
+ /* styling of animated border */
+ .input-border {
+  position: absolute;
+  background: var(--border-after-color);
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s;
+ }
+ /* Hover on Input */
+ input:hover {
+  background: var(--input-hovered-color);
+ }
+ 
+ input:focus {
+  outline: none;
+ }
+ /* here is code of animated border */
+ input:focus ~ .input-border {
+  width: 100%;
+ }
+ /* === if you want to do animated border on typing === */
+ /* remove input:focus code and uncomment below code */
+ /* input:valid ~ .input-border{
+   width: 100%;
+ } */
+
+ button {
+  background-color: rgb(20, 40, 156);
+  color: black;
+  border-radius: 10em;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0 black;
+  
+}
+
+button:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 black;
+};
+
+button:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 black;
+};
+
+
+.align {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.recommend{
+  display: flex;
+  justify-content: center;
+  column-gap: 40px;
+  row-gap: 40px;
+  padding: 60px;
+  text-align: center;
+}
+
+.movie-actions .delete-button {
+  background-color: red;
+  margin-left: 10px;
+}
+
+#watchlistLink{
+  text-decoration: none;
+  color: rgb(41, 41, 243);
+}
+
+@media (max-width: 991px)
+{
+    header
+    {
+        padding: 20px 20px;
+    }
+    header.sticky
+    {
+        padding: 10px 20px;
+    }
+  }
